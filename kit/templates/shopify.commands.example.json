@@ -1,0 +1,9 @@
+{
+  "storeEnv": "SHOPIFY_FLAG_STORE",
+  "dev": "shopify theme dev --store \"$SHOPIFY_FLAG_STORE\"",
+  "check": "shopify theme check",
+  "pull": "shopify theme pull --store \"$SHOPIFY_FLAG_STORE\"",
+  "pushUnpublished": "shopify theme push --unpublished --store \"$SHOPIFY_FLAG_STORE\"",
+  "share": "shopify theme share --store \"$SHOPIFY_FLAG_STORE\"",
+  "list": "shopify theme list --store \"$SHOPIFY_FLAG_STORE\""
+}

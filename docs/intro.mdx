@@ -1,0 +1,54 @@
+---
+title: Claude Code para temas Shopify
+slug: /
+sidebar_position: 1
+---
+
+<div className="hero--kit">
+
+# Setup do Claude Code para Shopify
+
+Este repositório é ao mesmo tempo a documentação e o kit. O dev lê para se contextualizar. O Claude Code lê o contrato de auto-install e aplica skills, agents, MCPs e guardrails num tema, sem reinventar os arquivos.
+
+<div className="pill-row">
+  <span className="pill">claude-mem com Gemini grátis</span>
+  <span className="pill">skills por symlink</span>
+  <span className="pill">swarm Sonnet + Haiku</span>
+  <span className="pill">Notion e Figma</span>
+  <span className="pill">Playwright no browser</span>
+</div>
+
+</div>
+
+## Duas leituras
+
+| Quem | Começa em | O que faz |
+| --- | --- | --- |
+| Desenvolvedor | [Fluxo do dev](/fluxo/para-o-dev) | Entende o setup, autentica MCPs, roda o tema e revisa o que o agente escreveu |
+| Claude Code | [Auto-install](/claude/auto-install) | Instala o kit no tema alvo e para antes de qualquer OAuth ou `theme publish` |
+
+Os arquivos canônicos já existem em `.claude/skills` e `.claude/agents`. A instalação cria symlinks no tema. Ela não gera skills novas a partir do texto desta página.
+
+## O que o kit cobre
+
+- Memória barata com [claude-mem](/setup/claude-mem) usando a API gratuita do Google AI Studio
+- Mapa do tema, padrão de código do dev, system design e design system gravados em `.claude/memory/`
+- Swarm em tmux (WSL): Sonnet orquestra, Haiku ou Sonnet executam, o orquestrador só passa caminhos
+- Fluxo SDLC, PRs no GitHub, guardrails de tema e testes Playwright com navegação real
+- Skills de engenharia no espírito de [mattpocock/skills](https://github.com/mattpocock/skills), escritas para Liquid e vitrine Shopify
+
+## Onde está cada coisa
+
+```text
+claude-code-setup/
+├── docs/                  # o que você está lendo
+├── .claude/skills/        # SKILL.md canônicos
+├── .claude/agents/        # subagents
+├── .claude/hooks/         # bloqueia publish, delete e force-push
+├── .mcp.json              # Notion, Figma e Playwright
+├── kit/manifest.json      # lista que o instalador segue
+└── scripts/install.ps1    # auto-install no Windows
+    scripts/install.sh     # auto-install em WSL, macOS ou Linux
+```
+
+A suíte Playwright da loja ENRFORCE, quando este kit está no workspace `JOB`, fica em `../ENRFORCE-E2E`. O instalador não mexe nela.
